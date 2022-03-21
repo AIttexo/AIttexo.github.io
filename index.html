@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <style>
-    body {
-      font-family: monospace; 
-    }
-  </style>
+    <title>Stage 5</title>
+    <style>
+        body {
+            font-family: monospace;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="special_code.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#enter").click(function() {
+                var instagram = $("#ig").val();
+                var code = generate_code(instagram);
+                $("#code_message").css("visibility", "visible");
+                $("#special_code").html(code);
+            });
+        });
+    </script>
 </head>
+
 <body>
-  <h1>hello world</h1>
-  <h1 style="visibility:hidden">password!</h1>
+    <h1 style="visibility:hidden">password:2223AIttexo</h1>
+
+    <p>Enter your instagram account below</p>
+    <input type="text" id="ig" name="ig">
+    <button id="enter">Enter</button>
+    <p id="code_message" style="visibility: hidden;">Please keep this special code!</p>
+    <p><span id="special_code"></span></p>
 </body>
+
 </html>
